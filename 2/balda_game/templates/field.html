@@ -1,0 +1,80 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block js_files %}
+    <script src="{% static 'balda_game/jquery-2.1.3.min.js' %}"></script>
+    <script src="{% static 'balda_game/jquery.cookie.js' %}"></script>
+    <script src="{% static 'balda_game/game_process.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'balda_game/field.css' %}" />
+    <style type="text/css">
+        .cell {
+            background: url("{% static 'balda_game/images/tree_back.jpg' %}");
+            width:  40px;
+            height: 40px;
+            font-size: 22pt;
+        }
+    </style>
+
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <form id="game_space" action="{% url 'commit_word' game_id %}">
+
+            <div class="col-lg-2 col-md-2 col-xs-2 first_player">
+                <div class="user_id_first">User 1</div>
+                <br/>
+                <div class="score_first">Score 1</div>
+                <ul class="words_first">
+                    <li>МАМА(4)</li>
+                    <li>ПАПА(4)</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-6 middle">
+                <div class="times" style="margin: 0 auto"> Time to end </div>
+
+                <table id="field_up" style="margin: 0 auto;">
+                    {% for row in field %}
+                        <tr>
+                            {% for item in row %}
+                                <td>
+                                    <button class="cell"> {{ item.0 }} </button>
+                                    <div class="state">{{ item.1 }}</div>
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </table>
+
+                <br/>
+
+                <div id="control_panel">
+
+                    <input type="text" name="word" class="current_word" placeholder="Word" style="width: 80%; margin: 0 auto;">
+                    <br/>
+                    <div id="letters_panel">
+                        {% for letter in lang_list %}
+                            <button class="letter_button"> {{ letter }} </button>
+                        {% endfor %}
+                    </div>
+
+                    <br/>
+                    <p>
+                        <button id="commit" class="btn btn-success">Сделать ход</button>
+                        <button id="reset" class="btn btn-danger">Стереть</button>
+                     <!-- TODO make post form via AJAX -->
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2 second_player">
+                <div class="user_id_second">User 2</div>
+                <br/>
+                <div class="score_second">Score 2</div>
+                <ul class="words_second">
+                    <li>БАБА(4)</li>
+                    <li>ДЕДА(4)</li>
+                </ul>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}

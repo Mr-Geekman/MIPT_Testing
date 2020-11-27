@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+
+    {% if message %}
+        <div id="login_error">
+            <div class="alert alert-danger">{{ message }}</div>
+        </div>
+    {% endif %}
+    <div id="enter_form">
+        <form method="post" action="{% url 'login_view' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Login</label>
+                <input type="text" name="username" class="form-control" placeholder="Login">
+
+                <br/>
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="password">
+
+                <br/>
+
+                <button type="submit" value="Enter" class="btn btn-primary">Enter</button>
+            </div>
+            <input type="hidden" name="next" value="/">
+        </form>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,80 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 15px;
+}
+
+#main_table tr {
+    margin-top: 40px;
+}
+
+.column_1 {
+    width: 20%;
+    vertical-align: top;
+}
+
+.column_3 {
+    width: 20%;
+    vertical-align: top;
+}
+
+#center_column {
+    width: 60%;
+    vertical-align: top;
+}
+
+#hello {
+    margin-top: 4%;
+    font-size: 20px;
+}
+
+.rating_field {
+    margin-top: 3%;
+    border: 3px solid;
+    border-radius: 5px;
+}
+
+.rating_field .rating_head
+{
+    background-color: darkorange;
+}
+
+.rating_field td {
+    border: 2px solid;
+}
+
+.rating_field .rating_place {
+    width: 5em;
+}
+
+.rating_field .rating_user {
+    width: 10em;
+}
+
+.rating_field .rating_quantity {
+    width: 7em;
+}
+
+#rating_table {
+    margin-top: 1%;
+    text-align: left;
+}
+
+#main {
+    height: 100%;
+}
+
+#center {
+    text-align: center;
+}
+
+tr{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+

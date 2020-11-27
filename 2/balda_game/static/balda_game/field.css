@@ -1,0 +1,51 @@
+#big_come {
+    display: none;
+}
+
+.state {
+    display: none;
+}
+
+#letters_panel {
+    display: none;
+}
+
+.first_player {
+    width: 20%;
+    margin-right: 2%;
+}
+
+#middle {
+    width: 60%;
+}
+
+.second_player {
+    margin-left: 2%;
+    width: 20%;
+}
+
+.current_word {
+    margin-top: 20px;
+    pointer-events: none;
+}
+
+td {
+    vertical-align: top;
+}
+
+
+table {
+    border-spacing: 10px 15px;
+}
+
+#reset {
+    margin-right: 5px;
+}
+
+#letters_panel {
+    margin-top: 10px;
+}
+
+#commit {
+
+}

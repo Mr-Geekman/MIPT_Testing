@@ -1,0 +1,9 @@
+*.sqlite3
+*.pyc
+.idea/
+/src/*.txt
+log/
+results/
+/balda/postgres_settings.py
+/balda/secret_key.py
+
